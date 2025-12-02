@@ -1,0 +1,107 @@
+{
+  "provider": "openai",
+  "models": {
+    "gpt-3.5-turbo": {
+      "name": "gpt-3.5-turbo",
+      "context_length": 4096,
+      "max_tokens": 4096,
+      "temperature_range": [0.0, 2.0],
+      "pricing": {
+        "input_tokens": 0.0015,
+        "output_tokens": 0.002
+      },
+      "capabilities": [
+        "chat_completion",
+        "function_calling",
+        "json_mode"
+      ],
+      "recommended_for": [
+        "general_evaluation",
+        "quick_assessment",
+        "cost_optimized"
+      ]
+    },
+    "gpt-4": {
+      "name": "gpt-4",
+      "context_length": 8192,
+      "max_tokens": 8192,
+      "temperature_range": [0.0, 2.0],
+      "pricing": {
+        "input_tokens": 0.03,
+        "output_tokens": 0.06
+      },
+      "capabilities": [
+        "chat_completion",
+        "function_calling",
+        "json_mode",
+        "vision"
+      ],
+      "recommended_for": [
+        "comprehensive_evaluation",
+        "complex_analysis",
+        "high_accuracy"
+      ]
+    },
+    "gpt-4-turbo": {
+      "name": "gpt-4-turbo-preview",
+      "context_length": 128000,
+      "max_tokens": 4096,
+      "temperature_range": [0.0, 2.0],
+      "pricing": {
+        "input_tokens": 0.01,
+        "output_tokens": 0.03
+      },
+      "capabilities": [
+        "chat_completion",
+        "function_calling",
+        "json_mode",
+        "vision",
+        "large_context"
+      ],
+      "recommended_for": [
+        "long_context_evaluation",
+        "document_analysis",
+        "comprehensive_assessment"
+      ]
+    }
+  },
+  "default_parameters": {
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "top_p": 0.9,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "stream": false
+  },
+  "evaluation_optimized_params": {
+    "accuracy": {
+      "temperature": 0.3,
+      "max_tokens": 1500,
+      "top_p": 0.8
+    },
+    "relevance": {
+      "temperature": 0.5,
+      "max_tokens": 1000,
+      "top_p": 0.9
+    },
+    "completeness": {
+      "temperature": 0.8,
+      "max_tokens": 3000,
+      "top_p": 0.95
+    },
+    "fluency": {
+      "temperature": 0.6,
+      "max_tokens": 1500,
+      "top_p": 0.85
+    }
+  },
+  "rate_limits": {
+    "requests_per_minute": 3500,
+    "tokens_per_minute": 160000
+  },
+  "retry_config": {
+    "max_retries": 3,
+    "retry_delay": 1.0,
+    "backoff_factor": 2.0
+  }
+}

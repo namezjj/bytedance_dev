@@ -1,0 +1,87 @@
+{
+  "provider": "doubao",
+  "models": {
+    "doubao-pro": {
+      "name": "ep-20250614210935-8mthr",
+      "context_length": 8192,
+      "max_tokens": 4096,
+      "temperature_range": [0.0, 1.0],
+      "pricing": {
+        "input_tokens": 0.0008,
+        "output_tokens": 0.002
+      },
+      "capabilities": [
+        "text_generation",
+        "chat_completion",
+        "chinese_optimized"
+      ],
+      "recommended_for": [
+        "evaluation",
+        "chinese_qa",
+        "general_tasks"
+      ]
+    },
+    "doubao-lite": {
+      "name": "ep-20250901154526-nx2mc",
+      "context_length": 4096,
+      "max_tokens": 2048,
+      "temperature_range": [0.0, 1.0],
+      "pricing": {
+        "input_tokens": 0.0003,
+        "output_tokens": 0.0006
+      },
+      "capabilities": [
+        "text_generation",
+        "chat_completion",
+        "fast_response"
+      ],
+      "recommended_for": [
+        "quick_evaluation",
+        "cost_sensitive",
+        "high_throughput"
+      ]
+    }
+  },
+  "default_parameters": {
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "top_p": 0.9
+  },
+  "evaluation_optimized_params": {
+    "accuracy": {
+      "temperature": 0.2,
+      "max_tokens": 1500,
+      "top_p": 0.8
+    },
+    "relevance": {
+      "temperature": 0.3,
+      "max_tokens": 1200,
+      "top_p": 0.85
+    },
+    "completeness": {
+      "temperature": 0.5,
+      "max_tokens": 2500,
+      "top_p": 0.9
+    },
+    "fluency": {
+      "temperature": 0.4,
+      "max_tokens": 1500,
+      "top_p": 0.85
+    }
+  },
+  "rate_limits": {
+    "requests_per_minute": 60,
+    "tokens_per_minute": 100000
+  },
+  "retry_config": {
+    "max_retries": 3,
+    "retry_delay": 2.0,
+    "backoff_factor": 2.0
+  },
+  "api_config": {
+    "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+    "endpoint": "/chat/completions",
+    "auth_type": "bearer_token"
+  }
+}
+
